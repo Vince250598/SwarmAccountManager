@@ -3,7 +3,7 @@
 import * as vscode from 'vscode';
 import { request } from 'graphql-request'
 
-const SERVER_URL = 'http://localhost:8080/graphql?';
+const SERVERURL = 'http://localhost:8080/graphql?';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -11,17 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-		console.log('Congratulations, your extension "helloworld" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	/*let disposable = vscode.commands.registerCommand('extension.swarm-debugging.open', (user?: string) => {
-		//connect to server and fetch user and later password
-		openSwarmAccount(context, user);
-	});
-
-	context.subscriptions.push(disposable);*/
+		console.log('Congratulations, your extension "SwarmAccountManager" is now active!');
 
 	let disposable = vscode.commands.registerCommand('extension.swarm-debugging.open', (username?: string) => {
 		const account = vscode.window.showQuickPick(['existing account', 'create an account'], {
@@ -61,7 +51,7 @@ async function createSwarmAccount(context: vscode.ExtensionContext, username?: s
 		user: username
 	}
 
-	request(SERVER_URL, query, variables).then(data =>
+	request(SERVERURL, query, variables).then(data =>
 		console.log(data));
 }
 
@@ -79,12 +69,12 @@ async function openSwarmAccount(context: vscode.ExtensionContext, username?: str
 		user: username
 	}
 
-	request(SERVER_URL, query, variables).then(data => {_
+	request(SERVERURL, query, variables).then(data => {_
 		if(!data){
 			vscode.window.showErrorMessage("Invalid Username");
 		}else {
 			//display tasks
-			
+			vscode.window.createTreeView
 		}
 	});
 }

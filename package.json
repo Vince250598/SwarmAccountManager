@@ -1,6 +1,6 @@
 {
-	"name": "helloworld",
-	"displayName": "HelloWorld",
+	"name": "swarm-account-manager",
+	"displayName": "SwarmAccountManager",
 	"description": "",
 	"version": "0.0.1",
 	"engines": {
@@ -15,24 +15,19 @@
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [{
-			"command": "extension.login",
-			"title": "Login"
-		},{
-			"command": "extension.logout",
-			"title": "Logout"
-		},{
 			"command": "extension.swarm-debugging.open",
 			"title": "Open Swarm Debugging Account manager"
 		}],
 		"menus": {
 			"scm/title": [
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
 				{
-					"command": "extension.login",
-					"group": "navigation"
-				},
-				{
-					"command": "extension.logout",
-					"group": "navigation"
+					"id": "swarm-account-manager",
+					"title": "Swarm Account Manager",
+					"icon": "media/SwarmDebugging.png"
 				}
 			]
 		}
