@@ -16,21 +16,8 @@
 	"contributes": {
 		"commands": [{
 			"command": "extension.swarm-debugging.open",
-			"title": "Open Swarm Debugging Account manager"
-		}],
-		"menus": {
-			"scm/title": [
-			]
-		},
-		"viewsContainers": {
-			"activitybar": [
-				{
-					"id": "swarm-account-manager",
-					"title": "Swarm Account Manager",
-					"icon": "media/SwarmDebugging.png"
-				}
-			]
-		}
+			"title": "Open Swarm Debugging Account Manager"
+		}]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
